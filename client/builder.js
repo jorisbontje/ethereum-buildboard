@@ -8,9 +8,6 @@ Template.builder.helpers({
     formatDate: function(epoch) {
         return moment.unix(epoch).format();
     },
-    fromNow: function(date) {
-        return moment(date).fromNow();
-    },
     isBuilding: function() {
         return this.state === 'building';
     },

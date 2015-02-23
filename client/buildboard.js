@@ -7,6 +7,9 @@ Template.buildboard.helpers({
         return BuilderLib.filters;
 
     },
+    fromNow: function(date) {
+        return moment(date).fromNow();
+    },
     builders: function () {
         var query = {};
         _.each(BuilderLib.filters, function(filter) {
@@ -16,6 +19,12 @@ Template.buildboard.helpers({
             }
         });
         return Builders.find(query, { sort: { buildStart: -1, name: 1 } });
+    },
+    lastUpdated: function() {
+        var last = Builders.find({}, {sort: {lastUpdated: -1}, limit: 1}).fetch();
+        if (last) {
+            return last[0].lastUpdated;
+        }
     }
 });
 
