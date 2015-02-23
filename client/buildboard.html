@@ -1,0 +1,26 @@
+<template name="buildboard">
+  <div class="btn-toolbar">
+  {{#each filters}}
+    {{> queryFilter type=this}}
+  {{/each}}
+  <div class="btn-group" role="group" aria-label="{{type}}">
+      <button class="btn btn-default clear">Reset</button>
+      <button class="btn btn-info refresh">Refresh</button>
+  </div>
+  </div>
+
+  <table class="table table-striped">
+    <tr>
+        <th>Builder</th>
+        <th>Project</th>
+        <th>OS</th>
+        <th>Branch</th>
+        <th>Activity</th>
+        <th>Last Build #</th>
+        <th>Elapsed</th>
+    </tr>
+    {{#each builders}}
+      {{> builder}}
+    {{/each}}
+  </table>
+</template>

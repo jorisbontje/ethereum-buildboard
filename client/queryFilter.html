@@ -1,0 +1,8 @@
+<template name="queryFilter">
+  <div class="btn-group" role="group" aria-label="{{type}}">
+  {{#each items}}
+    <button type="button" data-value="{{this}}" class="btn {{#if isActive ../type}}btn-primary active{{else}}btn-default{{/if}}">{{this}}</button>
+  {{/each}}
+  </div>
+</template>
+

@@ -1,0 +1,31 @@
+<template name="builder">
+  <tr>
+    <td>
+        <a href="{{builderUrl}}">
+          <span class="name">{{name}}</span>
+        </a>
+    </td>
+    <td>
+        {{project}}
+    </td>
+    <td>
+        {{os}}
+    </td>
+    <td>
+        {{branch}}
+    </td>
+    <td>
+        <span class="state label {{stateLabel}}">{{state}}</span>
+    </td>
+    <td>
+        <a href="{{lastBuildUrl}}">
+            <span class="lastBuild label {{lastBuildLabel}}">#{{lastBuild}} {{text}}</span>
+        </a>
+    </td>
+    <td>
+        {{#if isIdle}}
+            {{elapsed}}
+        {{/if}}
+    </td>
+  </tr>
+</template>
