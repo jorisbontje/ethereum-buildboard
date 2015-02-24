@@ -8,7 +8,7 @@ Ensure you have [Meteor](https://www.meteor.com/install) installed.
 
 Checkout the project from GitHub:
 
-    $ git@github.com:jorisbontje/ethereum-buildboard.git
+    $ git clone git@github.com:jorisbontje/ethereum-buildboard.git
 
 To run the app:
 
