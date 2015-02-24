@@ -22,7 +22,7 @@ Template.buildboard.helpers({
     },
     lastUpdated: function() {
         var last = Builders.find({}, {sort: {lastUpdated: -1}, limit: 1}).fetch();
-        if (last) {
+        if (_.size(last)) {
             return last[0].lastUpdated;
         }
     }
@@ -32,6 +32,7 @@ Template.buildboard.events({
     'click .clear': function () {
         _.each(BuilderLib.filters, function(filter) {
             Session.set("toggle-" + filter, undefined);
+            localStorage.removeItem("toggle-" + filter);
         });
     },
     'click .refresh': function () {

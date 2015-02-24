@@ -1,5 +1,11 @@
 "use strict";
 
+Meteor.startup(function() {
+    _.each(BuilderLib.filters, function(filter) {
+        Session.set("toggle-" + filter, localStorage.getItem("toggle-" + filter) || undefined);
+    });
+});
+
 Template.queryFilter.helpers({
     items: function() {
         if (this.type === "project") {
@@ -25,8 +31,10 @@ Template.queryFilter.events({
         var currentValue = Session.get("toggle-" + type);
         if (currentValue !== value) {
             Session.set("toggle-" + type, value);
+            localStorage.setItem("toggle-" + type, value);
         } else {
             Session.set("toggle-" + type, undefined);
+            localStorage.removeItem("toggle-" + type);
         }
     }
 });
