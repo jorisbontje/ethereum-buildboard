@@ -6,7 +6,9 @@ Template.builder.helpers({
         return moment.duration(duration, "seconds").format("hh:mm:ss", { trim: false });
     },
     ended: function() {
-        return moment.unix(this.buildEnd).format("HH:mm:ss MMM Do");
+        if (this.buildEnd) {
+            return moment.unix(this.buildEnd).format("HH:mm:ss MMM Do");
+        }
     },
     formatDate: function(epoch) {
         return moment.unix(epoch).format();
