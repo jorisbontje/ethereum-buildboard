@@ -1,6 +1,6 @@
 # Ethereum Buildboard
 
-Dashboard for the (Ethereum)[https://www.ethereum.org/] (buildbot)[https://build.ethdev.com/]
+Dashboard for the Ethereum buildbot.
 
 ## Development
 
