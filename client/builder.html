@@ -26,9 +26,19 @@
         {{#if isIdle}}
             {{elapsed}}
         {{/if}}
+        {{#if isBuilding}}
+            {{buildElapsed}}
+        {{/if}}
     </td>
     <td>
-        {{ended}}
+        {{#if eta}}
+            {{eta}}
+        {{/if}}
+    </td>
+    <td>
+        {{#if isIdle}}
+            {{ended}}
+        {{/if}}
     </td>
   </tr>
 </template>

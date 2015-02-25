@@ -5,10 +5,18 @@ Template.builder.helpers({
         var duration = this.buildEnd - this.buildStart;
         return moment.duration(duration, "seconds").format("hh:mm:ss", { trim: false });
     },
+    buildElapsed: function() {
+        var now = new Date().getTime() / 1000;
+        var duration = now - this.buildStart;
+        return moment.duration(duration, "seconds").format("hh:mm:ss", { trim: false });
+    },
     ended: function() {
         if (this.buildEnd) {
             return moment.unix(this.buildEnd).format("HH:mm:ss MMM Do");
         }
+    },
+    eta: function() {
+        return moment.duration(this.eta, "seconds").format("hh:mm:ss", { trim: false });
     },
     formatDate: function(epoch) {
         return moment.unix(epoch).format();
