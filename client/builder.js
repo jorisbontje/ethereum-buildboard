@@ -14,6 +14,8 @@ Template.builder.helpers({
     ended: function() {
         if (this.buildEnd) {
             return moment.unix(this.buildEnd).toDate();
+        } else {
+            return moment().add(this.eta, 'seconds').toDate();
         }
     },
     eta: function() {

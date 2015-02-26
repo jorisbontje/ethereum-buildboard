@@ -25,13 +25,8 @@
     <td>
         {{formatDuration elapsed}}
     </td>
-    <td class="{{#if isIdle}}text-muted{{/if}}">
-        {{formatDuration eta}}
-    </td>
-    <td>
-        {{#if isIdle}}
-            {{livestamp ended}}
-        {{/if}}
+    <td class="{{#if isBuilding}}text-primary{{/if}}" title="{{#if isBuilding}}{{formatDuration eta}}{{/if}}">
+        {{livestamp ended}}
     </td>
   </tr>
 </template>
