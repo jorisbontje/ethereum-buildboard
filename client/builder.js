@@ -12,7 +12,7 @@ Template.builder.helpers({
     },
     ended: function() {
         if (this.buildEnd) {
-            return moment.unix(this.buildEnd).format("HH:mm:ss MMM Do");
+            return moment.unix(this.buildEnd, "s").fromNow();
         }
     },
     eta: function() {
