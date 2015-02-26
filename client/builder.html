@@ -23,21 +23,14 @@
         </a>
     </td>
     <td>
-        {{#if isIdle}}
-            {{elapsed}}
-        {{/if}}
-        {{#if isBuilding}}
-            {{buildElapsed}}
-        {{/if}}
+        {{formatDuration elapsed}}
     </td>
-    <td>
-        {{#if eta}}
-            {{eta}}
-        {{/if}}
+    <td class="{{#if isIdle}}text-muted{{/if}}">
+        {{formatDuration eta}}
     </td>
     <td>
         {{#if isIdle}}
-            {{ended}}
+            {{livestamp ended}}
         {{/if}}
     </td>
   </tr>

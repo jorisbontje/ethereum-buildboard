@@ -7,9 +7,6 @@ Template.buildboard.helpers({
         return BuilderLib.filters;
 
     },
-    fromNow: function(date) {
-        return moment(date).fromNow();
-    },
     builders: function () {
         var query = {};
         _.each(BuilderLib.filters, function(filter) {
