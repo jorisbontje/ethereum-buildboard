@@ -10,8 +10,8 @@ Template.queryFilter.helpers({
     items: function() {
         if (this.type === "project") {
             return BuilderLib.projects;
-        } else if (this.type === "os") {
-            return BuilderLib.oses;
+        } else if (this.type === "arch") {
+            return BuilderLib.archs;
         } else if (this.type === "branch") {
             return BuilderLib.branches;
         } else {
